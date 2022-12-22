@@ -1,0 +1,47 @@
+version: "3.8"
+services:
+  app:
+    build:
+      args:
+        user: '1012'
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: tgt
+    container_name: tgt-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - tgt
+
+  db:
+    image: mysql:8.0
+    container_name: tgt-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: tgt
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_PASSWORD: password
+      MYSQL_USER: admin
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - tgt
+
+  nginx:
+    image: nginx:alpine
+    container_name: tgt-nginx
+    restart: unless-stopped
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d/
+    networks:
+      - tgt
+
+networks:
+  tgt:
+    driver: bridge
