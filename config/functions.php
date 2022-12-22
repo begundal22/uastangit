@@ -1,6 +1,6 @@
 <?php  
 // koneksi dbms
-$conn = mysqli_connect("localhost","root","","tang-it");
+$conn = mysqli_connect("tang-it.cltwmwlnm2so.us-east-1.rds.amazonaws.com","admin","password","tang-it");
 
 
 

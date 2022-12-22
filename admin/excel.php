@@ -1,6 +1,6 @@
 <?php  
 //export.php  
-$connect = mysqli_connect("localhost", "root", "", "tang-it");
+$connect = mysqli_connect("tang-it.cltwmwlnm2so.us-east-1.rds.amazonaws.com", "root", "", "tang-it");
 $output = '';
 if(isset($_POST["export"]))
 {

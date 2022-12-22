@@ -1,5 +1,5 @@
 <?php
-$conn=mysqli_connect("localhost","root","","php");
+$conn=mysqli_connect("tang-it.cltwmwlnm2so.us-east-1.rds.amazonaws.com","root","","php");
 if(!$conn){
 die("Database Connect Error");
 }

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$conn = mysqli_connect("localhost", "root", "", "tang-it");
+$conn = mysqli_connect("tang-it.cltwmwlnm2so.us-east-1.rds.amazonaws.com", "root", "", "tang-it");
 require '../config/functions.php';
 
 // ambil data di url

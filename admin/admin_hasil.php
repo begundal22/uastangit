@@ -52,10 +52,10 @@ $columns = array(
  
 // SQL server connection information
 $sql_details = array(
-    'user' => 'root',
-    'pass' => '',
+    'user' => 'admin',
+    'pass' => 'password',
     'db'   => 'tang-it',
-    'host' => 'localhost'
+    'host' => 'tang-it.cltwmwlnm2so.us-east-1.rds.amazonaws.com'
 );
  
  
